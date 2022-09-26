@@ -26,11 +26,19 @@
   font-size: 62.5%;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  background: var(--bg-dk);
   width: 100%;
   height: 100%;
-  font-family: "Poppins", sans-serif;
+  background: var(--bg-dk);
+}
+
+a {
+  display: block;
 }
 
 .col-a {
@@ -55,19 +63,40 @@ header#main-title {
 
   color: var(--t-color);
 
-  font-size: clamp(1.6rem, -0.68rem + 6.3333vw, 5.4rem);
+  font-size: clamp(1.6rem, -0.68rem + 6.3333vw, 4.4rem);
   line-height: clamp(5.6rem, 3.2rem + 6.6667vw, 9.6rem);
 }
 
 header#main-title h3,
 header#main-title h2 {
-  font-size: clamp(1.6rem, 1.12rem + 1.3333vw, 2.4rem);
+  font-size: clamp(1.6rem, 1.12rem + 1.3333vw, 4.4rem);
+}
+
+header#main-title ul.social-list {
+  display: flex;
+  gap: 3.2rem;
+  margin-bottom: 3rem;
+}
+
+header#main-title ul.social-list li a {
+  font-size: clamp(2.5rem, -0.68rem + 6.3333vw, 3.2rem);
+  color: var(--t-color);
+}
+
+header#main-title .arrow-bottom {
+  width: 6rem;
+  height: 6rem;
+  background: url(/assets/down-arrow.png) no-repeat;
+  background-size: cover;
+  display: block;
+
+  animation: slide-bottom 2.7s infinite alternate-reverse;
 }
 
 header#main-title::before {
   content: "";
   width: 100%;
-  height: 93.7rem;
+  height: 90.7rem;
   position: absolute;
   background: url(/assets/telas-de-computadores-com-códigos.jpg) fixed;
   background-size: cover;
@@ -291,27 +320,46 @@ section#projects ul.projects-list li:hover span {
 
 section#contact-me .wrapper {
   background: var(--card-color);
-  padding-block: 6.5rem;
-  padding-inline: 3rem;
+  padding: 2.7rem 4.7rem;
+
+  text-align: center;
   border-radius: 0.8rem;
+
   display: flex;
   gap: 3.2rem;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
 }
 
-section#contact-me .wrapper > header h2 {
-  font-size: clamp(1.8rem, 0.72rem + 3vw, 3.6rem);
+section#contact-me .wrapper header {
+  font-size: clamp(1.8rem, 1.44rem + 1vw, 2.4rem);
+  display: flex;
+  gap: 1.2rem;
+  flex-flow: column;
+  align-items: center;
   color: var(--t-color);
 }
 
-section#contact-me .wrapper .btns {
+section#contact-me .wrapper header div {
+  background: var(--card-img-color);
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+}
+
+section#contact-me .wrapper header img {
+  display: block;
+  animation: light-bulb infinite 8s normal;
+}
+
+section#contact-me .wrapper .btns,
+section#contact-me .wrapper-modal .modal .btns {
   display: flex;
+  justify-content: center;
   gap: 2.3rem;
 }
 
-section#contact-me .wrapper .btn-custom {
+section#contact-me .wrapper .btn-custom,
+section#contact-me .modal .btn-custom {
   padding: 1.8rem;
   background: transparent;
 
@@ -319,7 +367,7 @@ section#contact-me .wrapper .btn-custom {
   border-radius: 0.8rem;
 
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 1.28rem + 0.3333vw, 1.6rem);
   line-height: 2.1rem;
   letter-spacing: 0.14rem;
   color: var(--t-color);
@@ -329,6 +377,124 @@ section#contact-me .wrapper .btn-custom {
   transition: background 0.7s;
 }
 
-section#contact-me .wrapper .btn-custom:hover {
+section#contact-me .wrapper .btn-custom:hover,
+section#contact-me .modal .btn-custom:hover {
   background: var(--f-color);
+}
+
+/* modal */
+section#contact-me .wrapper-modal {
+  display: none;
+}
+
+section#contact-me .wrapper-modal.active {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.687);
+
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@supports (backdrop-filter: blur(10rem)) {
+  section#contact-me .wrapper-modal.active {
+    background-color: rgba(0, 0, 0, 0.687);
+    backdrop-filter: blur(10rem);
+  }
+}
+
+section#contact-me .wrapper-modal.active div.modal {
+  padding-block: 4.5rem;
+  padding-inline: 2.5rem;
+  height: 50%;
+  background: var(--card-color);
+
+  position: fixed;
+  z-index: 101;
+
+  border-radius: 0.8rem;
+
+  display: flex;
+  gap: 3.2rem;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: clamp(1.4rem, 1.28rem + 0.3333vw, 1.6rem);
+  line-height: 2.1rem;
+  letter-spacing: 0.14rem;
+  color: var(--t-color);
+}
+
+section#contact-me .wrapper-modal.active ul.contact-list {
+  margin-top: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+section#contact-me .wrapper-modal.active ul.contact-list li a {
+  background: var(--card-img-color);
+  padding: 1rem;
+  border-radius: 0.8rem;
+
+  transition: filter 0.9s;
+}
+
+section#contact-me .wrapper-modal.active ul.contact-list li {
+  transition: filter 0.3s;
+}
+
+section#contact-me .wrapper-modal.active ul.contact-list li:hover a svg {
+  filter: brightness(1.2);
+}
+section#contact-me .wrapper-modal.active ul.contact-list li:hover {
+  filter: drop-shadow(0rem 0rem 1.2rem var(--f-color));
+}
+
+section#contact-me .wrapper-modal.active ul.contact-list svg {
+  width: min(3rem);
+  height: min(3rem);
+}
+
+section#contact-me .wrapper-modal.active svg.whatsIcon * {
+  stroke: transparent;
+  fill: var(--f-color);
+}
+
+section#contact-me .wrapper-modal.active svg.mailIcon * {
+  stroke: var(--f-color);
+}
+
+@keyframes light-bulb {
+  0% {
+    filter: drop-shadow(0rem 0rem -3rem #f1c40f);
+  }
+
+  50% {
+    filter: drop-shadow(0rem 0rem 1.5rem #f1c40f);
+  }
+
+  100% {
+    filter: drop-shadow(0rem 0rem 0rem #f1c40f);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+  }
 }
