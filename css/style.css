@@ -91,20 +91,27 @@ header#main-title h2 {
 }
 
 header#main-title ul.social-list {
+  margin-bottom: 3rem;
+
   display: flex;
   gap: 3.2rem;
-  margin-bottom: 3rem;
 }
 
 header#main-title ul.social-list li a {
   font-size: clamp(2.5rem, -0.68rem + 6.3333vw, 3.2rem);
   color: var(--t-color);
+
+  transition: opacity 0.8s;
+}
+
+header#main-title ul.social-list li:hover a {
+  opacity: 0.7;
 }
 
 header#main-title .arrow-bottom {
   width: 6rem;
   height: 6rem;
-  background: url(/assets/down-arrow.png) no-repeat;
+  background: url(/assets/icons//arrow.png) no-repeat;
   background-size: cover;
   display: block;
 
@@ -114,10 +121,11 @@ header#main-title .arrow-bottom {
 header#main-title::before {
   content: "";
   width: 100%;
-  height: 90.7rem;
-  position: absolute;
-  background: url(/assets/telas-de-computadores-com-códigos.jpg) fixed;
+  height: 89rem;
+  background: url(/assets/telas-de-computadores-com-códigos.jpg);
   background-size: cover;
+
+  position: absolute;
   z-index: -1;
 
   filter: blur(0.6rem);
@@ -140,13 +148,17 @@ section#about .wrapper {
 
 section#about img {
   width: 100%;
-  transform: translateY(-2.1rem);
+
   border-radius: 6.2rem 0.4rem 0.4rem 6.2rem;
+
+  transform: translateY(-2.1rem);
+
   filter: drop-shadow(-2.4rem 2rem 4rem #000);
 }
 
 section#about .col-a {
   width: 100%;
+
   position: relative;
 }
 
@@ -169,6 +181,7 @@ section#about .about-me {
   flex-flow: column;
   align-items: flex-start;
   gap: 3.2rem;
+
   color: var(--t-color);
 }
 
@@ -187,16 +200,18 @@ section#about .about-me h2 {
 section#about .about-me p {
   font-size: clamp(1.6rem, 1.48rem + 0.3333vw, 1.8rem);
   line-height: 2.7rem;
+
   opacity: 0.61;
 }
 
 /* ====SECTION-WHAT-I-DO==== */
 
 section#what-i-do .wrapper {
-  text-align: center;
   display: flex;
   flex-flow: column;
+
   gap: 3.2rem;
+  text-align: center;
 }
 
 section#what-i-do .wrapper header h2 {
@@ -213,9 +228,10 @@ section#what-i-do .wrapper > header h3 {
 }
 
 section#what-i-do ul.box-exp {
+  position: relative;
+
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
 section#what-i-do ul.box-exp li {
@@ -232,6 +248,7 @@ section#what-i-do ul.box-exp::before {
   width: 25rem;
   height: 50%;
   background: var(--gradient);
+
   position: absolute;
   border-radius: 48% / 48%;
   z-index: -1;
@@ -301,9 +318,10 @@ section#projects .wrapper > header h3 {
 }
 
 section#projects ul.projects-list li {
-  position: relative;
   width: 30rem;
   height: 20rem;
+
+  position: relative;
 }
 
 section#projects ul.projects-list span {
@@ -325,7 +343,7 @@ section#projects ul.projects-list span {
 
   visibility: hidden;
 
-  transition: bottom 0.73s;
+  transition: bottom 1s;
 }
 
 section#projects ul.projects-list li:hover span {
@@ -350,11 +368,12 @@ section#contact-me .wrapper {
 /* ====SECTION-CONTACT-ME==== */
 
 section#contact-me .wrapper header {
-  font-size: clamp(1.8rem, 1.44rem + 1vw, 2.4rem);
   display: flex;
-  gap: 1.2rem;
   flex-flow: column;
   align-items: center;
+  gap: 1.2rem;
+
+  font-size: clamp(1.8rem, 1.44rem + 1vw, 2.4rem);
   color: var(--t-color);
 }
 
@@ -366,6 +385,7 @@ section#contact-me .wrapper header div {
 
 section#contact-me .wrapper header img {
   display: block;
+
   animation: light-bulb infinite 8s normal;
 }
 
@@ -413,7 +433,7 @@ section#contact-me .wrapper-modal.active {
   background-color: rgba(0, 0, 0, 0.687);
 
   position: fixed;
-  z-index: 100;
+  z-index: 101;
   top: 0;
   left: 0;
 
@@ -455,6 +475,7 @@ section#contact-me .wrapper-modal.active .modal {
 
 section#contact-me .wrapper-modal.active ul.contact-list {
   margin-top: 3.2rem;
+
   display: flex;
   align-items: center;
   gap: 2.5rem;
@@ -494,6 +515,64 @@ section#contact-me .wrapper-modal.active svg.whatsIcon * {
 section#contact-me .wrapper-modal.active svg.mailIcon * {
   stroke: var(--f-color);
 }
+
+button.arrow-top {
+  width: 5.2rem;
+  height: 5.2rem;
+  background: url(/assets/icons/arrow.png);
+  background-size: cover;
+
+  transform: rotateX(180deg);
+
+  position: fixed;
+  right: -6.2rem;
+  bottom: 3.2rem;
+  z-index: 100;
+
+  transition: all 0.7s;
+
+  cursor: pointer;
+}
+
+button.arrow-top.active {
+  right: 3.2rem;
+}
+
+button.arrow-top.active:hover {
+  opacity: 0.8;
+}
+
+/* ====FOOTER===== */
+
+footer {
+  padding-block: 4.4rem;
+  background: var(--card-color);
+}
+
+footer img {
+  height: 6rem;
+  width: 6rem;
+
+  transition: transform 2.3s;
+}
+
+footer:hover img {
+  transform: rotate(360deg);
+}
+
+footer header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.8rem;
+
+  font-size: clamp(1rem, 0.84rem + 1vw, 1.2rem);
+  line-height: var(--line-height-h3);
+  color: var(--t-color);
+}
+
+/* ====ANIMATIONS===== */
 
 @keyframes light-bulb {
   0% {
