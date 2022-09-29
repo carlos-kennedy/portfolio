@@ -70,7 +70,7 @@ a {
 /* Header */
 
 header#main-title {
-  height: 50.2rem;
+  height: clamp(50.2rem, 38.2rem + 33.3333vw, 70.2rem);
   margin-bottom: 20.7rem;
 
   display: flex;
