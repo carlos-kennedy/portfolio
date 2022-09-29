@@ -291,6 +291,7 @@ section#projects .wrapper {
 }
 section#projects .wrapper img {
   width: 100%;
+  height: 20rem;
 }
 
 section#projects .wrapper header {
@@ -352,6 +353,21 @@ section#projects ul.projects-list li:hover span {
   visibility: visible;
 }
 
+/* ====NAVIGATION-SLIDE */
+
+section#projects .swiper-button-next:after,
+section#projects .swiper-button-prev:after {
+  color: var(--f-color);
+  font-size: 3.2rem;
+  padding: 1.2rem;
+  border-radius: 0.9rem;
+  background: var(--card-color);
+
+  opacity: 0.78;
+}
+
+/* ====SECTION-CONTACT-ME==== */
+
 section#contact-me .wrapper {
   background: var(--card-color);
   padding: 2.7rem 4.7rem;
@@ -364,8 +380,6 @@ section#contact-me .wrapper {
   flex-flow: column;
   align-items: center;
 }
-
-/* ====SECTION-CONTACT-ME==== */
 
 section#contact-me .wrapper header {
   display: flex;
