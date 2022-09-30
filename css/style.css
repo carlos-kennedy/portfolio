@@ -518,17 +518,14 @@ section#contact-me .wrapper-modal.active ul.contact-list li:hover {
   filter: drop-shadow(0rem 0rem 1.2rem var(--f-color));
 }
 
-section#contact-me .wrapper-modal.active ul.contact-list li:hover a svg {
+section#contact-me .wrapper-modal.active ul.contact-list li:hover a {
   filter: brightness(1.2);
 }
 
-section#contact-me .wrapper-modal.active svg.whatsIcon * {
-  stroke: transparent;
-  fill: var(--f-color);
-}
-
-section#contact-me .wrapper-modal.active svg.mailIcon * {
-  stroke: var(--f-color);
+section#contact-me .wrapper-modal.active i.fa-whatsapp,
+section#contact-me .wrapper-modal.active i.fa-envelope {
+  font-size: 2.8rem;
+  color: var(--f-color);
 }
 
 button.arrow-top {
