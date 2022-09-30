@@ -98,6 +98,7 @@ header#main-title ul.social-list {
 }
 
 header#main-title ul.social-list li a {
+  display: inline;
   font-size: clamp(2.5rem, -0.68rem + 6.3333vw, 3.2rem);
   color: var(--t-color);
 
@@ -290,7 +291,7 @@ section#projects .wrapper {
   overflow: hidden;
 }
 section#projects .wrapper img {
-  width: 100%;
+  width: 32rem;
   height: 20rem;
 }
 

@@ -1,6 +1,6 @@
 new Swiper(".mySwiper", {
   slidesPerView: "auto",
-  spaceBetween: 30,
+  spaceBetween: 40,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
