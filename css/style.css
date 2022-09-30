@@ -327,7 +327,7 @@ section#projects ul.projects-list li {
 }
 
 section#projects ul.projects-list span {
-  width: calc(100% + 0.1rem);
+  width: calc(100% + 2rem);
   height: 9.6rem;
   padding: 2.4rem;
   background: var(--card-color);
