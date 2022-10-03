@@ -1,0 +1,48 @@
+@mixin gradient-thumb {
+  background: linear-gradient(
+    to bottom,
+    $gradient-color-thumb1,
+    $gradient-color-thumb2
+  );
+}
+
+@mixin gradient {
+  background: linear-gradient(131deg, $gradient-color1, $gradient-color2);
+}
+
+@mixin positions($val) {
+  @if $val ==relative {
+    position: relative;
+  } @else if $val ==fixed {
+    position: fixed;
+  } @else {
+    position: absolute;
+  }
+}
+
+@mixin make-flex($val) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @if $val ==column {
+    flex-flow: column;
+  } @else if $val ==flex-start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+  } @else {
+    flex-flow: row;
+  }
+}
+
+@mixin displays($val){
+  @if $val == inline {
+    display: inline;
+  }
+
+  @else {
+    display: block;
+  }
+}

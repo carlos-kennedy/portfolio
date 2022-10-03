@@ -1,6 +1,12 @@
-// ARROW-TO-TOP
 const arrowTop = document.querySelector(".arrow-top");
+const arrowBottom = document.querySelector(".arrow-bottom");
 
+// ARROW-TO-SECTION
+const arrowToSection = () => {
+  window.scrollTo(0, 800);
+};
+
+// ARROW-TO-TOP
 const showArrowToTop = () => {
   if (scrollY > 650) {
     arrowTop.classList.add("active");
@@ -12,10 +18,10 @@ const showArrowToTop = () => {
 const arrowToTop = () => {
   window.scrollTo(0, 0);
 };
-
+// ARROW-EVENTS
 window.addEventListener("scroll", showArrowToTop);
 arrowTop.addEventListener("click", arrowToTop);
-
+arrowBottom.addEventListener("click", arrowToSection);
 
 // MODAL
 const body = document.querySelector("body");
@@ -38,5 +44,6 @@ const openModal = () => {
   wrapperModal.style.display = "flex";
 };
 
+// BTN-EVENTS
 btnContact.addEventListener("click", openModal);
 btnNo.addEventListener("click", closeModal);

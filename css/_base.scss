@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+::-webkit-scrollbar-thumb {
+  @include gradient-thumb();
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+
+  body {
+    width: 100%;
+    height: 100%;
+    background: $bg-dk;
+
+    a {
+    @include displays(none);
+    }
+  }
+}

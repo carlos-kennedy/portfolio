@@ -1,0 +1,25 @@
+@keyframes light-bulb {
+    0% {
+        filter: drop-shadow(0rem 0rem -3rem #f1c40f);
+    }
+
+    50% {
+        filter: drop-shadow(0rem 0rem 1.5rem #f1c40f);
+    }
+
+    100% {
+        filter: drop-shadow(0rem 0rem 0rem #f1c40f);
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(80px);
+        transform: translateY(80px);
+    }
+}

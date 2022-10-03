@@ -1,0 +1,53 @@
+header {
+  &#main-title {
+    height: clamp(50.2rem, 38.2rem + 33.3333vw, 70.2rem);
+    margin-bottom: 20.7rem;
+
+      @include make-flex(column);
+    @include positions(relative);
+
+    color: $title-color;
+
+    font-size: clamp(1.6rem, -0.68rem + 6.3333vw, 4.4rem);
+    line-height: clamp(5.6rem, 3.2rem + 6.6667vw, 9.6rem);
+
+    h3,
+    h2 {
+      font-size: clamp(1.6rem, 1.12rem + 1.3333vw, 4.4rem);
+    }
+
+    ul.social-list {
+      margin-bottom: 3rem;
+
+      display: flex;
+      gap: 3.2rem;
+
+      li {
+        &:hover a {
+          opacity: 0.7;
+        }
+      }
+
+      a {
+        @include displays(inline);
+        font-size: clamp(2.5rem, -0.68rem + 6.3333vw, 3.2rem);
+        color: $title-color;
+
+        transition: opacity 0.8s;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 89rem;
+      background: url(../assets/telas-de-computadores-com-códigos.jpg);
+      background-size: cover;
+
+      @include positions(absolute);
+      z-index: -1;
+
+      filter: blur(0.6rem);
+    }
+  }
+}
