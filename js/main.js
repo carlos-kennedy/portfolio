@@ -18,32 +18,30 @@ const showArrowToTop = () => {
 const arrowToTop = () => {
   window.scrollTo(0, 0);
 };
-// ARROW-EVENTS
-window.addEventListener("scroll", showArrowToTop);
-arrowTop.addEventListener("click", arrowToTop);
-arrowBottom.addEventListener("click", arrowToSection);
 
 // MODAL
 const body = document.querySelector("body");
 const wrapperModal = document.querySelector(".wrapper-modal");
-
 const btnContact = document.querySelector(".contact");
 const btnNo = document.querySelector(".btn-n");
+
+const openModal = () => {
+  body.style.overflow = "hidden";
+  wrapperModal.classList.add("active");
+  wrapperModal.style.display = "flex";
+};
 
 const closeModal = () => {
   body.style.overflow = "visible";
 
-  wrapperModal.classList.toggle("active");
-  wrapperModal.style.display = "none";
-};
-
-const openModal = () => {
-  body.style.overflow = "hidden";
-
-  wrapperModal.classList.toggle("active");
-  wrapperModal.style.display = "flex";
+  wrapperModal.classList.remove("active");
 };
 
 // BTN-EVENTS
 btnContact.addEventListener("click", openModal);
 btnNo.addEventListener("click", closeModal);
+
+// ARROW-EVENTS
+window.addEventListener("scroll", showArrowToTop);
+arrowTop.addEventListener("click", arrowToTop);
+arrowBottom.addEventListener("click", arrowToSection);

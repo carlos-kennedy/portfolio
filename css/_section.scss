@@ -208,7 +208,7 @@ section {
 
           visibility: hidden;
 
-          transition: bottom 1s;
+          transition: all 1s;
         }
 
         &:hover span {
@@ -232,6 +232,8 @@ section {
   }
 
   &#contact-me {
+    display: flex;
+    justify-content: center;
     .wrapper {
       background: $card-color;
       padding: 2.7rem 4.7rem;
@@ -269,7 +271,9 @@ section {
     }
 
     .wrapper-modal {
-      display: none;
+      @include positions(absolute);
+      bottom: -100%;
+      transition: all 1.2s;
 
       &.active {
         width: 100%;
@@ -278,16 +282,14 @@ section {
 
         @include positions(fixed);
         z-index: 101;
-        top: 0;
-        left: 0;
-
+        right: 0%;
+        bottom: 0%;        
         @include make-flex(none);
-        backdrop-filter: blur(10rem);
+        backdrop-filter: blur(2rem);
 
         .modal {
           padding-block: 4.5rem;
           padding-inline: 2.5rem;
-          height: 50%;
           background: $card-color;
 
           @include positions(fixed);
