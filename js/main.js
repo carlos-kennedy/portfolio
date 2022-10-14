@@ -22,18 +22,19 @@ const arrowToTop = () => {
 // MODAL
 const body = document.querySelector("body");
 const wrapperModal = document.querySelector(".wrapper-modal");
+const modal = document.querySelector(".modal");
 const btnContact = document.querySelector(".contact");
 const btnNo = document.querySelector(".btn-n");
 
 const openModal = () => {
   body.style.overflow = "hidden";
+  modal.style.visibility = "visible";
   wrapperModal.classList.add("active");
-  wrapperModal.style.display = "flex";
 };
 
 const closeModal = () => {
   body.style.overflow = "visible";
-
+  modal.style.visibility = "hidden";
   wrapperModal.classList.remove("active");
 };
 
