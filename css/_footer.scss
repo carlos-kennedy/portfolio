@@ -2,7 +2,7 @@ footer {
   header {
     @include make-flex(column);
     justify-content: space-evenly;
-    gap: 0.8rem;
+    gap: 2rem;
 
     font-size: clamp(1rem, 0.84rem + 1vw, 1.2rem);
     line-height: $font-size-h3;
@@ -10,11 +10,4 @@ footer {
   }
   padding-block: 4.4rem;
   background: $card-color;
-
-  img {
-    height: 6rem;
-    width: 6rem;
-
-    transition: transform 2.3s;
-  }
 }

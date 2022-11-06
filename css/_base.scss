@@ -19,12 +19,11 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-
+  overflow: overlay;
   body {
     width: 100%;
     height: 100%;
     background: $bg-dk;
-
     a {
     @include displays(none);
     }

@@ -17,19 +17,19 @@ const arrowToTop = () => {
   window.scrollTo(0, 0);
 };
 
-const body = document.querySelector("body");
+const root = document.querySelector("html");
 const wrapperModal = document.querySelector(".wrapper-modal");
 const modal = document.querySelector(".modal");
 const btnContact = document.querySelector(".contact");
 const btnNo = document.querySelector(".btn-n");
 
 const openModal = () => {
-  body.style.overflow = "hidden";
+  root.style.overflow = "hidden";
   wrapperModal.classList.add("active");
 };
 
 const closeModal = () => {
-  body.style.overflow = "visible";
+  root.style.overflow = "overlay";
   wrapperModal.classList.remove("active");
 };
 
